@@ -4,10 +4,34 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Document</title>
-    <script src="main.js" defer></script>
 </head>
 <body>
-    
+<div class="card">
+    <h1>Calcula tus cuotas sin intereses</h1>
+        <form action="">
+            <p class="txt">Seleccionar las cuotas deseadas:</p>
+            <div class="cuotas">
+                <input type="radio" id="tres"> 3 cuotas
+                <input type="radio" id="seis"> 6 cuotas
+                <input type="radio" id="nueve"> 9 cuotas
+                <input type="radio" id="doce"> 12 cuotas
+            </div>
+            <div class="cotizar">
+                <input type="number" placeholder="Dinero" class="caja" id="dinero" required>
+                <button class="boton" onclick="cuotas()">cotizar</button>
+            </div>
+    </form>
+</div>
+
+
+
+
+
+
+
+
+    <script src="main.js"></script>
 </body>
 </html>

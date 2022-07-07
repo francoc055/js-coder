@@ -1,0 +1,56 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+body{
+    background-color: antiquewhite;
+}
+.card{
+    background-color: rgb(245, 253, 255);
+    height: 400px;
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid black;
+    margin: 100px auto;
+    border-radius: 10px;
+}
+.card h1{
+    font-size: 2rem;
+    text-align: center;
+    padding: 1.5rem;
+    color: rgb(47, 152, 184);
+}
+.txt{
+    font-size: 1.3rem;
+    padding: 1rem;
+}
+.cuotas{
+    padding: 12px;
+}
+.caja{
+    height: 30px;
+    width: 100px;
+    /* font-size: 1rem; */
+    /* margin-bottom: 3px; */
+}
+.cotizar{
+    text-align: center;
+}
+.boton{
+    margin: 1rem;
+    font-size: 1rem;
+    padding: 6px;
+    border-radius: 5px;
+    background-color: rgb(0, 195, 255);
+    border-color: transparent;
+    transition: all .5s;
+    text-transform: uppercase;
+}
+.boton:hover{
+    transition: all .5s ;
+    background-color: rgb(117, 223, 255);
+    cursor: pointer;
+}
