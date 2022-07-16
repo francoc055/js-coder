@@ -43,6 +43,7 @@ function pagar() {
     window.alert(productos.join(", \n") + "\nel total es: $" +total)
 }*/
 
+let total = 0;
 
 let productos = [
     {modelo: "iphone SE", precio: 200},
@@ -51,6 +52,16 @@ let productos = [
     {modelo: "iphone 13", precio: 200},
 ];
 
-for(const articulo of productos){
-    console.log(articulo);
-} 
+function agregar(producto, precio) {
+    console.log(producto, precio);
+    for(const articulo of productos){
+        console.log(articulo);
+    } 
+    total = total + precio;
+    document.getElementById("check").innerHTML = `Pagar $${total}`;
+}
+
+function pagar() {
+    window.alert(productos.join(", \n") + "\nel total es: $" +total)
+}
+
