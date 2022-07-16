@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-<div class="card">
+<!-- <div class="card">
     <h1>Calcula tus cuotas sin intereses</h1>
         <form action="">
             <p class="txt">Seleccionar las cuotas deseadas:</p>
@@ -23,7 +23,43 @@
                 <button class="boton" onclick="cuotas()">cotizar</button>
             </div>
     </form>
-</div>
+</div> -->
+
+<nav class="nav">
+    <h1>Tienda de celulares</h1>
+    <button id="check" onclick="pagar()" >Pagar</button>
+</nav>
+
+<section class="flex">
+    <div class="box">
+        <img src="images/iphoneSE.jpg" alt="">
+        <div class="txtPrecioName">
+            <p>Iphone SE</p>
+            <button onclick="agregar('producto',200)">$200</button>
+        </div>
+    </div>
+    <div class="box">
+        <img src="images/iphoneOnce.png" alt="">
+        <div class="txtPrecioName">
+            <p>Iphone 11</p>
+            <button onclick="agregar('producto',300)">$300</button>
+        </div>
+    </div>
+    <div class="box">
+        <img src="images/iphoneDoceMini.png" alt="">
+        <div class="txtPrecioName">
+            <p>Iphone 12 mini</p>
+            <button onclick="agregar('producto',400)">$400</button>
+        </div>
+    </div>
+    <div class="box">
+        <img src="images/iphoneTrece.png" alt="">
+        <div class="txtPrecioName">
+            <p>Iphone 13</p>
+            <button onclick="agregar('producto',500)">$500</button>
+        </div>
+    </div>
+</section>
 
 
 

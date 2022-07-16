@@ -2,9 +2,11 @@
     padding: 0;
     margin: 0;
 }
+
 body{
     background-color: antiquewhite;
 }
+/*
 .card{
     background-color: rgb(245, 253, 255);
     height: 400px;
@@ -33,8 +35,6 @@ body{
 .caja{
     height: 30px;
     width: 100px;
-    /* font-size: 1rem; */
-    /* margin-bottom: 3px; */
 }
 .cotizar{
     text-align: center;
@@ -53,4 +53,61 @@ body{
     transition: all .5s ;
     background-color: rgb(117, 223, 255);
     cursor: pointer;
+}*/
+
+.nav{
+    height: 100px;
+    width: 100%;
+    background-color: rgb(41, 41, 41);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
 }
+.nav h1{
+    font-size: 2rem;
+    color: #ffffff;
+}
+.nav button{
+    height: 70px;
+    width: 100px;
+    cursor: pointer;
+    color: black;
+    font-size: 1rem;
+    background-color: #ffffff;
+    border-radius: 1rem;
+    transition: all .2s;
+}
+.nav button:hover{
+    transition: all .2s;
+    background-color: #ffffffe1;
+}
+
+.flex{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* margin: 2rem; */
+}
+.box{
+    margin: 2rem;
+    background-color: #ffffff;
+    /* border-radius: 2rem;  */
+}
+.txtPrecioName{
+    display: flex;
+    justify-content: space-around;
+}
+.txtPrecioName p, button{
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+.txtPrecioName button{
+    cursor: pointer;
+}
+
+.box img{
+    width: 400px;
+    height: 400px;
+}
+
+

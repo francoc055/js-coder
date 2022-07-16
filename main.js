@@ -1,4 +1,4 @@
-function cuotas() {
+/*function cuotas() {
     let valor;
     let resultado;
     let tresCuotas;
@@ -27,4 +27,30 @@ function cuotas() {
         resultado = valor / doceCuotas;
         alert("Las cuotas tienen un valor de : $" + resultado.toFixed(2))
     }
+}*/
+
+/*let productos = [];
+let total = 0;
+
+function agregar(producto, precio) {
+    console.log(producto, precio);
+    productos.push(producto);
+    total = total + precio;
+    document.getElementById("check").innerHTML = `Pagar $${total}`;
 }
+
+function pagar() {
+    window.alert(productos.join(", \n") + "\nel total es: $" +total)
+}*/
+
+
+let productos = [
+    {modelo: "iphone SE", precio: 200},
+    {modelo: "iphone 11", precio: 200},
+    {modelo: "iphone 12 mini", precio: 200},
+    {modelo: "iphone 13", precio: 200},
+];
+
+for(const articulo of productos){
+    console.log(articulo);
+} 
