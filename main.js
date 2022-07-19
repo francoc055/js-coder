@@ -1,3 +1,4 @@
+////// Para pagar el producto en cuotas
 /*function cuotas() {
     let valor;
     let resultado;
@@ -45,12 +46,23 @@ function pagar() {
 
 let total = 0;
 
-let productos = [
+const productos = [
     {modelo: "iphone SE", precio: 200},
-    {modelo: "iphone 11", precio: 200},
-    {modelo: "iphone 12 mini", precio: 200},
-    {modelo: "iphone 13", precio: 200},
+    {modelo: "iphone 11", precio: 300},
+    {modelo: "iphone 12 mini", precio: 400},
+    {modelo: "iphone 13", precio: 500},
 ];
+
+let preciobajo = productos.filter(el => el.precio <= 300);
+
+console.log(preciobajo);
+
+let precioalto = productos.filter(el => el.precio >= 400);
+
+console.log(precioalto);
+
+
+
 
 function agregar(producto, precio) {
     console.log(producto, precio);
