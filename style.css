@@ -110,4 +110,9 @@ body{
     height: 400px;
 }
 
+.novedades h2, p{
+    text-align: center;
+    margin: 1rem;
+}
+
 

@@ -27,46 +27,45 @@
 
 <nav class="nav">
     <h1>Tienda de celulares</h1>
-    <button id="check" onclick="pagar()" >Pagar</button>
+    <button id="check" onclick="pagar()">Pagar</button>
 </nav>
 
+<!-- seccion -->
 <section class="flex">
     <div class="box">
         <img src="images/iphoneSE.jpg" alt="">
         <div class="txtPrecioName">
             <p>Iphone SE</p>
-            <button onclick="agregar('producto',200)">$200</button>
+            <button id="btn" onclick="agregar('iphone SE',300)">$200</button>
         </div>
     </div>
     <div class="box">
         <img src="images/iphoneOnce.png" alt="">
         <div class="txtPrecioName">
             <p>Iphone 11</p>
-            <button onclick="agregar('producto',300)">$300</button>
+            <button  onclick="agregar('Iphone 11',300)">$300</button>
         </div>
     </div>
     <div class="box">
         <img src="images/iphoneDoceMini.png" alt="">
         <div class="txtPrecioName">
             <p>Iphone 12 mini</p>
-            <button onclick="agregar('producto',400)">$400</button>
+            <button  onclick="agregar('Iphone 12 mini',400)">$400</button>
         </div>
     </div>
     <div class="box">
         <img src="images/iphoneTrece.png" alt="">
         <div class="txtPrecioName">
             <p>Iphone 13</p>
-            <button onclick="agregar('producto',500)">$500</button>
-        </div>
+            <button  onclick="agregar('Iphone 13',500)">$500</button>
+        </div> 
     </div>
+
 </section>
-
-
-
-
-
-
-
+<section class="novedades">
+    <h2>Proximamente</h2>
+    <p id="prox"></p>
+</section>
 
     <script src="main.js"></script>
 </body>

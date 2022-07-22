@@ -30,7 +30,7 @@
     }
 }*/
 
-/*let productos = [];
+let productos = [];
 let total = 0;
 
 function agregar(producto, precio) {
@@ -42,38 +42,21 @@ function agregar(producto, precio) {
 
 function pagar() {
     window.alert(productos.join(", \n") + "\nel total es: $" +total)
-}*/
-
-let total = 0;
-
-const productos = [
-    {modelo: "iphone SE", precio: 200},
-    {modelo: "iphone 11", precio: 300},
-    {modelo: "iphone 12 mini", precio: 400},
-    {modelo: "iphone 13", precio: 500},
-];
-
-let preciobajo = productos.filter(el => el.precio <= 300);
-
-console.log(preciobajo);
-
-let precioalto = productos.filter(el => el.precio >= 400);
-
-console.log(precioalto);
-
-
-
-
-function agregar(producto, precio) {
-    console.log(producto, precio);
-    for(const articulo of productos){
-        console.log(articulo);
-    } 
-    total = total + precio;
-    document.getElementById("check").innerHTML = `Pagar $${total}`;
 }
 
-function pagar() {
-    window.alert(productos.join(", \n") + "\nel total es: $" +total)
+// nuevos articulos
+let nuevosArticulos = ["iphone 12", "iphone 13 pro"];
+
+const prox = document.querySelector("#prox");
+
+
+for(let novedades of nuevosArticulos){
+    let articulos = document.createElement("li");
+    articulos.innerHTML = novedades;
+    prox.appendChild(articulos);
 }
+
+
+
+
 
