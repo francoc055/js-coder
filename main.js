@@ -30,33 +30,52 @@
     }
 }*/
 
-let productos = [];
-let total = 0;
 
-function agregar(producto, precio) {
-    console.log(producto, precio);
-    productos.push(producto);
-    total = total + precio;
-    document.getElementById("check").innerHTML = `Pagar $${total}`;
+
+const carrito = document.getElementById("carrito");
+const template = document.getElementById("template");
+const fragment = document.createDocumentFragment();
+const botones = document.querySelectorAll(".btn");
+
+
+const carritoObj = {};
+
+const agregarAlCarrito = (e) => {
+    console.log(e.target.dataset.cel);
+
+    const producto = {
+        titulo:e.target.dataset.cel,
+        cantidad: 1,
+    }
+
+    if(carritoObj.hasOwnProperty(producto.titulo))
+    {
+        producto.cantidad = carritoObj[producto.titulo].cantidad + 1;
+    }
+
+    carritoObj [producto.titulo] = producto;
+
+    mostrarCarrito()
+};
+
+const mostrarCarrito = () => {
+
+    Object.values(carritoObj).forEach(item => {
+        carrito.textContent = ""
+
+        const clone = template.content.firstElementChild.cloneNode(true);
+        clone.querySelector(".iphone").textContent = item.titulo;
+        clone.querySelector(".cant").textContent = item.cantidad;
+
+        fragment.appendChild(clone);
+    })
+
+    carrito.appendChild(fragment);
 }
 
-function pagar() {
-    window.alert(productos.join(", \n") + "\nel total es: $" +total)
-}
-
-// nuevos articulos
-let nuevosArticulos = ["iphone 12", "iphone 13 pro"];
-
-const prox = document.querySelector("#prox");
-
-
-for(let novedades of nuevosArticulos){
-    let articulos = document.createElement("li");
-    articulos.innerHTML = novedades;
-    prox.appendChild(articulos);
-}
-
-
+botones.forEach(btn => {
+    btn.addEventListener("click", agregarAlCarrito)
+})
 
 
 

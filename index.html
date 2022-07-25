@@ -4,8 +4,13 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- link css -->
     <link rel="stylesheet" href="style.css">
+    <!-- link FA -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Document</title>
+    <!-- link css bt -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body>
 <!-- <div class="card">
@@ -27,46 +32,57 @@
 
 <nav class="nav">
     <h1>Tienda de celulares</h1>
-    <button id="check" onclick="pagar()">Pagar</button>
 </nav>
 
-<!-- seccion -->
+<!-- main -->
 <section class="flex">
     <div class="box">
         <img src="images/iphoneSE.jpg" alt="">
         <div class="txtPrecioName">
             <p>Iphone SE</p>
-            <button id="btn" onclick="agregar('iphone SE',300)">$200</button>
+        <button class="btn btn-outline-primary"  data-cel="Iphone SE">Agregar</button>
         </div>
     </div>
     <div class="box">
         <img src="images/iphoneOnce.png" alt="">
         <div class="txtPrecioName">
             <p>Iphone 11</p>
-            <button  onclick="agregar('Iphone 11',300)">$300</button>
+            <button class="btn btn-outline-primary"  data-cel="Iphone 11">Agregar</button>
         </div>
     </div>
     <div class="box">
         <img src="images/iphoneDoceMini.png" alt="">
         <div class="txtPrecioName">
             <p>Iphone 12 mini</p>
-            <button  onclick="agregar('Iphone 12 mini',400)">$400</button>
+            <button class="btn btn-outline-primary" data-cel="Iphone 12 mini">Agregar</button>
         </div>
     </div>
     <div class="box">
         <img src="images/iphoneTrece.png" alt="">
         <div class="txtPrecioName">
             <p>Iphone 13</p>
-            <button  onclick="agregar('Iphone 13',500)">$500</button>
+            <button class="btn btn-outline-primary"  data-cel="Iphone 13">Agregar</button>
         </div> 
     </div>
-
 </section>
-<section class="novedades">
-    <h2>Proximamente</h2>
-    <p id="prox"></p>
+<!-- carrito -->
+<section class="carrito-title">
+    <h2>
+        Carrito 
+        <i class="fa-solid fa-cart-shopping"></i>
+    </h2> 
 </section>
-
-    <script src="main.js"></script>
+<section class="container">
+    <ul id="carrito"></ul>
+</section>
+<!-- template -->
+<template id="template">
+    <li class="li">
+        <span class="iphone">iphone 11</span>
+        <span class="cant badge bg-primary rouded-pill">1</span>
+    </li>
+</template>
+<!-- link js -->
+<script src="main.js"></script>
 </body>
 </html>

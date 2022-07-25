@@ -2,10 +2,7 @@
     padding: 0;
     margin: 0;
 }
-
-body{
-    background-color: antiquewhite;
-}
+/* CUOTAS */
 /*
 .card{
     background-color: rgb(245, 253, 255);
@@ -55,43 +52,31 @@ body{
     cursor: pointer;
 }*/
 
+/* Nav */
 .nav{
-    height: 100px;
+    height: 80px;
     width: 100%;
-    background-color: rgb(41, 41, 41);
+    background-color: #ffffff;
     display: flex;
     justify-content: space-around;
     align-items: center;
 }
 .nav h1{
     font-size: 2rem;
-    color: #ffffff;
-}
-.nav button{
-    height: 70px;
-    width: 100px;
-    cursor: pointer;
-    color: black;
-    font-size: 1rem;
-    background-color: #ffffff;
-    border-radius: 1rem;
-    transition: all .2s;
-}
-.nav button:hover{
-    transition: all .2s;
-    background-color: #ffffffe1;
+    color: #000;
 }
 
+/* Main */
 .flex{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    /* margin: 2rem; */
+    background-color: rgb(249, 249, 255);
 }
 .box{
     margin: 2rem;
-    background-color: #ffffff;
-    /* border-radius: 2rem;  */
+    background-color: #fff;
+    box-shadow: 3px 3px 8px rgb(141, 141, 141);
 }
 .txtPrecioName{
     display: flex;
@@ -110,9 +95,23 @@ body{
     height: 400px;
 }
 
-.novedades h2, p{
+/* Carrito */
+.carrito-title{
     text-align: center;
-    margin: 1rem;
+    margin: 2rem;
+}
+.carrito-title h2{
+    color: #000;
+    font-size: 3rem;
+}
+
+.li{
+    text-align: center;
+    width: 500px;
+    margin: 0 auto;
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
 }
 
 
