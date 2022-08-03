@@ -66,6 +66,59 @@
     color: #000;
 }
 
+.ancla{
+    height: 45px;
+    width: 60px;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    right: 50px;
+    top: 20px;
+    border: solid 3px #000;
+    border-radius: 10px;
+    transition: all .4s;
+    /* animation: mover 1.2s ease alternate; */
+    text-decoration: none;
+}
+.ancla:hover{
+    transition: all .4s;
+    box-shadow: 2px 2px 7px #000;
+    background-color:  rgb(227, 227, 233);
+}
+@keyframes mover{
+    0%{
+        transform: translateY(0);
+    }
+    20%{
+        transform: translateY(-3px);
+    }
+    40%{
+        transform: translateY(3px);
+    }
+    60%{
+        transform: translateY(-3px);
+    }
+    80%{
+        transform: translateY(3px);
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+
+.ancla i{
+    font-size: 1.2rem;
+    color: #000;
+    /* position: relative;
+    top: 7px;
+    left: 4px; */
+}
+.ancla span{
+    color: black;
+    font-size: 1.3rem;
+}
+
 /* Main */
 .flex{
     display: flex;
@@ -77,6 +130,7 @@
     margin: 2rem;
     background-color: #fff;
     box-shadow: 3px 3px 8px rgb(141, 141, 141);
+    height: 500px;
 }
 .txtPrecioName{
     display: flex;
@@ -95,6 +149,13 @@
     height: 400px;
 }
 
+.boton{
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 /* Carrito */
 .carrito-title{
     text-align: center;
@@ -105,13 +166,51 @@
     font-size: 3rem;
 }
 
+#carrito{
+    padding-left: 0;
+}
 .li{
-    text-align: center;
+    /* text-align: center; */
     width: 500px;
     margin: 0 auto;
     padding: 10px;
     display: flex;
-    justify-content: space-around;
+    border: solid 1px rgb(151, 151, 151);
 }
+.iphone, .cant{
+    margin: 3px;
+}
+
+.footer-caja{
+    width: 500px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    border: solid 1px rgb(151, 151, 151);
+    padding: 1rem;
+}
+.footer-title{
+    text-transform: uppercase;   
+}
+
+.lista-aq{
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.lista-p{
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    position: relative;
+    top: 8px;
+}
+
+.btn-q, .btn-a{
+    border: transparent;
+    border-radius: 10px;
+    padding: 5px;
+}
+
 
 

@@ -33,56 +33,100 @@
 <nav class="nav">
     <h1>Tienda de celulares</h1>
 </nav>
+<div>
+    <a id="iconoCarrito" class="ancla" href="#cart">
+        <i class="fa-solid fa-cart-arrow-down"></i>
+        <span id="contador"></span>
+    </a>
+</div>
 
 <!-- main -->
+
 <section class="flex">
     <div class="box">
         <img src="images/iphoneSE.jpg" alt="">
         <div class="txtPrecioName">
             <p>Iphone SE</p>
-        <button class="btn btn-outline-primary"  data-cel="Iphone SE">Agregar</button>
+            <p>$200</p>
         </div>
-    </div>
+        <div class="boton">
+            <button class="btn btn-outline-primary "  data-cel="Iphone SE" data-precio="200">Agregar</button>
+        </div>
+        </div>
     <div class="box">
         <img src="images/iphoneOnce.png" alt="">
         <div class="txtPrecioName">
             <p>Iphone 11</p>
-            <button class="btn btn-outline-primary"  data-cel="Iphone 11">Agregar</button>
+            <p>$300</p>
+        </div>
+        <div class="boton">
+            <button class="btn btn-outline-primary"  data-cel="Iphone 11" data-precio="300">Agregar</button>
         </div>
     </div>
     <div class="box">
         <img src="images/iphoneDoceMini.png" alt="">
         <div class="txtPrecioName">
             <p>Iphone 12 mini</p>
-            <button class="btn btn-outline-primary" data-cel="Iphone 12 mini">Agregar</button>
+            <p>$400</p>
+        </div>
+        <div class="boton">
+            <button class="btn btn-outline-primary" data-cel="Iphone 12 mini" data-precio="400">Agregar</button>
         </div>
     </div>
     <div class="box">
         <img src="images/iphoneTrece.png" alt="">
         <div class="txtPrecioName">
             <p>Iphone 13</p>
-            <button class="btn btn-outline-primary"  data-cel="Iphone 13">Agregar</button>
+            <p>$500</p>
         </div> 
+        <div class="boton">
+            <button class="btn btn-outline-primary"  data-cel="Iphone 13" data-precio="500">Agregar</button>
+        </div>
     </div>
 </section>
 <!-- carrito -->
-<section class="carrito-title">
+<section class="carrito-title" id="cart">
     <h2>
         Carrito 
         <i class="fa-solid fa-cart-shopping"></i>
     </h2> 
 </section>
 <section class="container">
-    <ul id="carrito"></ul>
+    <ul id="carrito">
+
+    </ul>
 </section>
-<!-- template -->
+<!-- template card-->
 <template id="template">
-    <li class="li">
-        <span class="iphone">iphone 11</span>
-        <span class="cant badge bg-primary rouded-pill">1</span>
-    </li>
+        <li class="li bg-secondary">
+            <span class="iphone">iphone</span>
+            <span class="cant badge bg-primary rouded-pill">1</span>
+        </li>
+        <li class="li lista-aq">
+            <div>
+                <p class="lista-p">total $ <span>500</span> </p>
+            </div>
+            <div>
+                <button class="btn-a bg-primary">agregar</button>
+                <button class="btn-q bg-danger">quitar</button>
+            </div>
+        </li>
 </template>
+
+<!-- footer -->
+<footer id="footer">
+</footer>
+
+<!-- template footer -->
+<template id="templateFooter">
+    <div class="footer-caja">
+        <h3 class="footer-title">total $ <span>1000</span> </h3>
+        <button class="btn btn-outline-dark">Finalizar compra</button>
+    </div>
+</template>
+
 <!-- link js -->
 <script src="main.js"></script>
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
 </body>
 </html>
