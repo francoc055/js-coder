@@ -1,4 +1,4 @@
-////// Para pagar el producto en cuotas
+////// Para pagar el producto en cuotas (para implementar) //// 
 /*function cuotas() {
     let valor;
     let resultado;
@@ -32,60 +32,9 @@
 
 
 
-// const carrito = document.getElementById("carrito");
-// const template = document.getElementById("template");
-// const fragment = document.createDocumentFragment();
-// const botones = document.querySelectorAll(".btn");
-
-
-
-// // almaceno los productos
-// const carritoObj = {};
-
-// const agregarAlCarrito = (e) => {
-//     console.log(e.target.dataset.cel);
-
-//     // 2do --> construyo un objeto con la informacion del 'e.target.dataset.cel'
-//     const producto = { 
-//         titulo:e.target.dataset.cel, // con el e.target traemos la informacion del boton que se presiono.
-//         cantidad: 1,
-//     }
-//     // si el carritoObj tiene la propiedad 'producto.titulo'
-//     if(carritoObj.hasOwnProperty(producto.titulo))
-//     {
-//         producto.cantidad = carritoObj[producto.titulo].cantidad + 1; // le sumamos uno a cantidad
-//     } 
-
-//     // 3ero --> empujo las propiedades del objeto 'producto' hacia el objeto 'carritoObj'
-//     carritoObj [producto.titulo] = producto;
-
-//     mostrarCarrito()
-// };
-
-// // 4to --> creamos una funcion para mostrar el carrito en el html
-// const mostrarCarrito = () => {
-
-//     // 'carritoObj' lo convierto en array para poder recorrerlo con el for each, cada 'item' representa cada uno de los elementos que ya empujamos en el 3er paso. 
-//     Object.values(carritoObj).forEach(item => {
-//         carrito.textContent = ""; //que en el texto el carrito parta vacio, asi no se repite en el for each
-
-//         const clone = template.content.firstElementChild.cloneNode(true);
-//         clone.querySelector(".iphone").textContent = item.titulo;
-//         clone.querySelector(".cant").textContent = item.cantidad;
-
-//         fragment.appendChild(clone);
-//     })
-
-//     carrito.appendChild(fragment);
-// }
-
-// // 1ero --> recorro los botones, hago click y ejecuto la funcion 'agregarAlCarrito'
-// botones.forEach(btn => {
-//     btn.addEventListener("click", agregarAlCarrito)
-// })
-
 // almaceno los productos
 let carritoObj = JSON.parse(localStorage.getItem("carritoObj")) ?? [];
+
 
 const carrito = document.getElementById("carrito");
 const template = document.getElementById("template");
@@ -97,14 +46,11 @@ const iconoCarrito = document.getElementById("iconoCarrito")
 
 
 document.addEventListener("click", e =>{
-    // console.log(e.target.matches(".box .btn-outline-primary"))
     //delegacion de eventos
     if(e.target.matches(".box .btn-outline-primary"))
     {
         agregarAlCarrito(e);
         iconCarrito(e);
-        document.getElementById("contador").innerHTML = carritoObj.length;
-        localStorage.setItem("carrito", JSON.stringify(carritoObj));
     }
 
     if(e.target.matches(".btn-a"))
@@ -129,21 +75,17 @@ const iconCarrito = (e) => {
 }
 
 
-
-
-
 const agregarAlCarrito = (e) => {
     console.log(e.target.dataset.cel);
 
-    // 2do --> construyo un objeto con la informacion del 'e.target.dataset.cel'
+
     const producto = { 
-        titulo:e.target.dataset.cel, // con el e.target traemos la informacion del boton que se presiono.
+        titulo:e.target.dataset.cel,
         id: e.target.dataset.cel,
         cantidad: 1,
         precio:parseInt(e.target.dataset.precio)
     }
 
-    // console.log(producto)
 
     // creo variable indice, y utilizo metodo findIndex para filtrar por indice el arrar carritoObj y pregunto si existe.
     const indice = carritoObj.findIndex((item) => item.id === producto.id );
@@ -156,15 +98,26 @@ const agregarAlCarrito = (e) => {
     else //si es distinto capturamos el elemento indice, y le sumamos uno a la cantidad
     {
         carritoObj[indice].cantidad += 1; 
-        // carritoObj[indice].precio = carritoObj[indice].cantidad * producto.precio;
     }
 
     mostrarCarrito()
-
+    totalCart()
 };
 
+const totalCart = () => {
+    document.getElementById("contador").textContent = "";
 
-// 4to --> creamos una funcion para mostrar el carrito en el html
+    const totalCant = carritoObj.reduce(
+        (acc, current) => acc + current.cantidad, 0
+    )
+
+    document.getElementById("contador").innerHTML +=
+    `<p>${totalCant}</p>`
+
+    localStorage.setItem("carrito", JSON.stringify(carritoObj));
+}
+
+// funcion para mostrar el carrito en el html
 const mostrarCarrito = () => {
     carrito.textContent = ""; //que en el texto el carrito parta vacio, asi no se repite en el for each
     
@@ -178,9 +131,6 @@ const mostrarCarrito = () => {
         clone.querySelector(".btn-a").dataset.id = item.id;
         clone.querySelector(".btn-q").dataset.id = item.id;
         fragment.appendChild(clone);
-
-        // document.getElementById("contador").innerHTML = carritoObj.length;
-        // localStorage.setItem("carrito", JSON.stringify(carritoObj));
     })
     
     carrito.appendChild(fragment);
@@ -209,8 +159,6 @@ const mostrarFooter = () => {
     } 
 
 };
-
-
 
 
 const btnAgregar = (e) =>{
@@ -245,10 +193,6 @@ const btnQuitar = (e) => {
     mostrarCarrito()
 }
 
-// 1ero --> recorro los botones, hago click y ejecuto la funcion 'agregarAlCarrito'
-// botones.forEach(btn => {
-//     btn.addEventListener("click", agregarAlCarrito)
-// })
 
 
 
