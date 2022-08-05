@@ -1,40 +1,5 @@
-////// Para pagar el producto en cuotas (para implementar) //// 
-/*function cuotas() {
-    let valor;
-    let resultado;
-    let tresCuotas;
-    let seisCuotas;
-    let nueveCuotas;
-    let doceCuotas;
-
-    valor = document.getElementById("dinero").value;
-    valor = parseInt(valor);
-
-    tresCuotas = 3;
-    seisCuotas = 6;
-    nueveCuotas = 9;
-    doceCuotas = 12;
-
-    if(document.getElementById("tres").checked){
-        resultado = valor / tresCuotas;
-        alert("Las cuotas tienen un valor de : $" + resultado.toFixed(2))
-    }else if(document.getElementById("seis").checked){
-        resultado = valor / seisCuotas;
-        alert("Las cuotas tienen un valor de : $" + resultado.toFixed(2))
-    }else if(document.getElementById("nueve").checked){
-        resultado = valor / nueveCuotas;
-        alert("Las cuotas tienen un valor de : $" + resultado.toFixed(2))
-    }else if(document.getElementById("doce").checked){
-        resultado = valor / doceCuotas;
-        alert("Las cuotas tienen un valor de : $" + resultado.toFixed(2))
-    }
-}*/
-
-
-
 // almaceno los productos
-let carritoObj = JSON.parse(localStorage.getItem("carritoObj")) ?? [];
-
+let carritoObj = [];
 
 const carrito = document.getElementById("carrito");
 const template = document.getElementById("template");
@@ -67,6 +32,14 @@ document.addEventListener("click", e =>{
     if(e.target.matches(".btn-outline-dark"))
     {
         swal("Compra finalizada!", "Vuelva pronto!", "success");
+        if(swal("Compra finalizada!", "Vuelva pronto!", "success"))
+        {
+            localStorage.clear();
+            setTimeout(() => {
+                location.reload()
+            }, 2000);
+        }
+        // terminar();
     }
 })
 
@@ -112,14 +85,13 @@ const totalCart = () => {
     )
 
     document.getElementById("contador").innerHTML +=
-    `<p>${totalCant}</p>`
-
-    localStorage.setItem("carrito", JSON.stringify(carritoObj));
+    `<p class="tc">${totalCant}</p>`
 }
 
 // funcion para mostrar el carrito en el html
 const mostrarCarrito = () => {
     carrito.textContent = ""; //que en el texto el carrito parta vacio, asi no se repite en el for each
+    // localStorage.setItem("carritoObj", JSON.stringify(carritoObj));
     
     carritoObj.forEach(item => {
         const clone = template.content.cloneNode(true);
@@ -136,11 +108,14 @@ const mostrarCarrito = () => {
     carrito.appendChild(fragment);
 
     mostrarFooter();
+
 }
 
 
 const mostrarFooter = () => {
     footer.textContent = "";
+    localStorage.setItem("carritoObj", JSON.stringify(carritoObj));
+
 
     const total = carritoObj.reduce(
         (acc, current) => acc + current.precio * current.cantidad, //primer parametro
@@ -152,10 +127,11 @@ const mostrarFooter = () => {
 
     footer.appendChild(cloneF); //no hace falta fragmentar ya que no hay un ciclo.
 
-    if(total === 0)
+    if(total === 0) // si el total es igual a 0 le agregamos la clase d-none al div padre del footer.
     {
-        footer.remove(document.querySelector("footer-caja"));
-        location.reload()
+        document.querySelector(".footer-caja").classList.add("d-none");
+        // localStorage.clear();
+        return;
     } 
 
 };
@@ -166,6 +142,7 @@ const btnAgregar = (e) =>{
         if(item.id === e.target.dataset.id)
         {
             item.cantidad++;
+            totalCart();
         }
         return item
     })
@@ -179,6 +156,7 @@ const btnQuitar = (e) => {
             if(item.cantidad > 0)
             {
                 item.cantidad--;
+                totalCart();
                 if(item.cantidad === 0)
                 {
                     return
@@ -193,6 +171,26 @@ const btnQuitar = (e) => {
     mostrarCarrito()
 }
 
+
+document.addEventListener("DOMContentLoaded", e =>{
+    if(localStorage.getItem("carritoObj"))
+    {
+        carritoObj =  JSON.parse(localStorage.getItem("carritoObj"));
+        mostrarCarrito();
+    }
+})
+
+// const terminar = () => {
+//     swal("Compra finalizada!", "Vuelva pronto!", "success");
+//     if(swal("Compra finalizada!", "Vuelva pronto!", "success"))
+//     {
+//         // document.querySelector(".footer-caja").classList.add("d-none");
+//         // document.querySelector(".li").classList.add("d-none");
+//         // document.querySelector(".lista-aq").classList.add("d-none");
+//         // document.querySelector(".tc").classList.add("d-none");
+//         localStorage.clear();
+//     }
+// }
 
 
 
