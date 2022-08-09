@@ -1,0 +1,26 @@
+[
+    {
+        "precio": 200,
+        "id": 1,
+        "titulo": "Iphone SE",
+        "imagenUrl": "images/iphoneSE.jpg"
+    },
+    {
+        "precio": 300,
+        "id": 2,
+        "titulo": "Iphone 11",
+        "imagenUrl": "images/iphoneOnce.png"
+    },
+    {
+        "precio": 400,
+        "id": 3,
+        "titulo": "Iphone 12 mini",
+        "imagenUrl": "images/iphoneDoceMini.png"
+    },
+    {
+        "precio": 500,
+        "id": 4,
+        "titulo": "Iphone 13",
+        "imagenUrl": "images/iphoneTrece.png"
+    }
+]

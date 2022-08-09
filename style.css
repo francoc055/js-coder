@@ -77,15 +77,12 @@
     top: 20px;
     /* border: solid 3px #000; */
     border-radius: 10px;
-    transition: all .4s;
-    /* animation: mover 1.2s ease alternate; */
+    /* transition: all .4s; */
     text-decoration: none;
 }
 .ancla:hover{
-    transition: all .4s;
-    box-shadow: 2px 2px 7px #000;
-    background-color:  rgb(227, 227, 233);
-}
+    animation: mover 1.2s ease alternate;
+} 
 @keyframes mover{
     0%{
         transform: translateY(0);
@@ -127,14 +124,23 @@
     /* padding: 1px 15px; */
     width: 55px;
     height: 40px;
-    border-radius: 10px;
+    border-radius: 2rem;
     /* border: none; */
-    background-color:  #ffffff;
-    transition: all .4s;
+    /* background-color:  #ffffff; */
+    transition: all 1s ease;
+    background-color: transparent;
+    border: 2px solid #eee;
+    box-shadow: .5rem .5rem 1rem #ccc,
+            -.5rem -.5rem 1rem #fff
 }
 #total:hover{
     transition: all .4s;
-    background-color:  rgb(227, 227, 233);
+    box-shadow: .5rem .5rem 1rem #fff,
+    -.5rem -.5rem 1rem #cccc
+}
+#total:active{
+    box-shadow: inset .2rem .2rem 1rem #ccc,
+    inset -.2rem -.2rem 1rem #cccc
 }
 #total span p {
     position: relative;

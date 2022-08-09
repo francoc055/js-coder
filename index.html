@@ -27,49 +27,20 @@
 </div>
 
 <!-- main -->
+<section class="flex"></section>
 
-<section class="flex">
+<!-- template section -->
+<template id="templateCard">
     <div class="box">
-        <img src="images/iphoneSE.jpg" alt="">
+        <img src="" alt="" class="img">
         <div class="txtPrecioName">
-            <p>Iphone SE</p>
-            <p>$200</p>
-        </div>
-        <div class="boton">
-            <button class="btn btn-outline-primary "  data-cel="Iphone SE" data-precio="200">Agregar</button>
-        </div>
-        </div>
-    <div class="box">
-        <img src="images/iphoneOnce.png" alt="">
-        <div class="txtPrecioName">
-            <p>Iphone 11</p>
-            <p>$300</p>
-        </div>
-        <div class="boton">
-            <button class="btn btn-outline-primary"  data-cel="Iphone 11" data-precio="300">Agregar</button>
+            <p id="title">titulo</p>
+            <p id="price">precio</p>
+            <button class="btn btn-outline-primary"  data-cel="Iphone SE" data-precio="200">Agregar</button>
         </div>
     </div>
-    <div class="box">
-        <img src="images/iphoneDoceMini.png" alt="">
-        <div class="txtPrecioName">
-            <p>Iphone 12 mini</p>
-            <p>$400</p>
-        </div>
-        <div class="boton">
-            <button class="btn btn-outline-primary" data-cel="Iphone 12 mini" data-precio="400">Agregar</button>
-        </div>
-    </div>
-    <div class="box">
-        <img src="images/iphoneTrece.png" alt="">
-        <div class="txtPrecioName">
-            <p>Iphone 13</p>
-            <p>$500</p>
-        </div> 
-        <div class="boton">
-            <button class="btn btn-outline-primary"  data-cel="Iphone 13" data-precio="500">Agregar</button>
-        </div>
-    </div>
-</section>
+</template>
+
 <!-- carrito -->
 <section class="carrito-title" id="cart">
     <h2>
@@ -78,11 +49,10 @@
     </h2> 
 </section>
 <section class="container">
-    <ul id="carrito">
-
-    </ul>
+    <ul id="carrito"></ul>
 </section>
-<!-- template card-->
+
+<!-- template-->
 <template id="template">
         <li class="li bg-secondary">
             <span class="iphone">iphone</span>
@@ -100,8 +70,7 @@
 </template>
 
 <!-- footer -->
-<footer id="footer">
-</footer>
+<footer id="footer"></footer>
 
 <!-- template footer -->
 <template id="templateFooter">
