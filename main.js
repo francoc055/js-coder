@@ -26,14 +26,16 @@ document.addEventListener("click", e => {
     }
     if(e.target.matches(".btn-outline-dark"))
     {
-        swal("Compra finalizada!", "Vuelva pronto!", "success");
-        if(swal("Compra finalizada!", "Vuelva pronto!", "success"))
-        {
+        swal({
+            title: "Compra finalizada!",
+            text: "Vuelva pronto!",
+            icon: "success",
+            button: "Ok",
+            });
+        document.addEventListener("click", () =>{
             localStorage.clear();
-            setTimeout(() => {
-                location.reload()
-            }, 2000);
-        }
+            location.reload();
+        })
     }
 })
 
