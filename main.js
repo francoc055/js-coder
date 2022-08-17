@@ -41,17 +41,32 @@ document.addEventListener("click", e => {
 
 let data;
 
+
 const fetchData = async () => {
     try {
         const res = await fetch('simuladorApi.json')
         data = await res.json()
         // console.log(data) 
-        mostrarCard(data);
+        setTimeout(() => {
+            mostrarCard(data);
+        }, 2000);
+        //agrego spinner de carga
+        section.innerHTML = `<div class="spinner-border" role="status">
+        <span class="visually-hidden">Loading...</span>
+        </div>
+        <p class="loading">Cargando...</p>`
+        
+        //quito spinner de carga
+        setTimeout(() => {
+            document.querySelector(".spinner-border").classList.add("d-none")
+            document.querySelector(".loading").classList.add("d-none")
+        }, 2000);
         agregarAlCarrito()
     } catch (error) {
-
+        console.log(error)
     }
 }
+
 
 const mostrarCard = data => {
     data.forEach(item => {
@@ -193,6 +208,7 @@ document.addEventListener("DOMContentLoaded", () =>{
         mostrarCarrito();
     }
 })
+
 
 
 
