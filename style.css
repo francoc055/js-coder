@@ -82,7 +82,7 @@
 }
 .ancla:hover{
     animation: mover 1.2s ease alternate;
-} 
+}  
 @keyframes mover{
     0%{
         transform: translateY(0);
@@ -160,6 +160,21 @@
     box-shadow: 3px 3px 8px rgb(141, 141, 141);
     height: 500px;
 }
+/* .box:hover{
+    animation: card 1.2s ease forwards;
+}
+@keyframes card
+{
+    from{
+        transform: rotateX(0);
+
+    }
+    to{
+        transform: rotateY(180deg);
+    }
+
+} */
+
 .txtPrecioName{
     display: flex;
     justify-content: space-around;

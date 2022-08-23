@@ -44,7 +44,7 @@ let data;
 
 const fetchData = async () => {
     try {
-        const res = await fetch('simuladorApi.json')
+        const res = await fetch('simulador.json')
         data = await res.json()
         // console.log(data) 
         setTimeout(() => {
@@ -61,9 +61,8 @@ const fetchData = async () => {
             document.querySelector(".spinner-border").classList.add("d-none")
             document.querySelector(".loading").classList.add("d-none")
         }, 2000);
-        agregarAlCarrito()
     } catch (error) {
-        console.log(error)
+        console.log(swal("Error", "No se pudo cargar la pagina :(", "error"))
     }
 }
 
@@ -81,6 +80,7 @@ const mostrarCard = data => {
     section.appendChild(fragment);
 }
 
+
 const agregarAlCarrito = (e) => {
     if(e.target.matches(".btn-outline-primary"))
     {
@@ -89,6 +89,7 @@ const agregarAlCarrito = (e) => {
     }
     e.stopPropagation()
 }
+
 
 const setCart = objeto =>{
     const producto = {
@@ -99,22 +100,15 @@ const setCart = objeto =>{
     }
 
     const indice = carrito.findIndex(item => item.id === producto.id);
-    // console.log(indice);
 
-    // if(indice == -1)
-    // {
-    //     carrito.push(producto);
-    // }
-    // else
-    // {
-    //     carrito[indice].cantidad++;
-    // }
 
     indice == -1 ? carrito.push(producto) : carrito[indice].cantidad++;
     
     console.log(carrito)
     totalCart()
 }
+
+
 
 const totalCart = () => {
     document.getElementById("contador").textContent = "";
